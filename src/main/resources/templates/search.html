@@ -20,15 +20,18 @@
                         name="searchType"
                         th:id="${column.key}"
                         th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
+
+                        th:checked="${searchType == column.key}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
     </p>
 
+      <!--                        th:checked="${column.key == 'all'}"-->
+
     <p>
       <label for="searchTerm">Keyword:</label>
-      <input type="text" name="searchTerm" id="searchTerm" />
+      <input type="text" name="searchTerm" id="searchTerm"/>
     </p>
 
     <input type="submit" value="Search" />
@@ -43,28 +46,29 @@
     <table class="job-listing" th:each="job : ${jobs}">
         <thead>
         <tr>
-            <td>ID</td>
-            <td th:text="${job.id}"></td>
+            <th class="label label-primary">ID</th>
+            <td class="label label-success" th:text="${job.id}"></td>
         </tr>
         <tr>
-            <td>Name</td>
-            <td th:text="${job.name}"></td>
+            <th class="label label-primary">Name</th>
+            <td class="label label-success" th:text="${job.name}"></td>
         </tr>
         <tr>
-            <td>Employer</td>
-            <td th:text="${job.employer}"></td>
+            <th class="label label-primary">Employer</th>
+            <td class="label label-success" th:text="${job.employer}"></td>
+        </tr>
+
+        <tr>
+            <th class="label label-primary">Location</th>
+            <td class="label label-success" th:text="${job.location}"></td>
         </tr>
         <tr>
-            <td>Location</td>
-            <td th:text="${job.location}"></td>
+            <th class="label label-primary">Position Type</th>
+            <td class="label label-success" th:text="${job.positionType}"></td>
         </tr>
         <tr>
-            <td>Postion Type</td>
-            <td th:text="${job.positionType}"></td>
-        </tr>
-        <tr>
-            <td>Skill</td>
-            <td th:text="${job.coreCompetency}"></td>
+            <th class="label label-primary">Skill</th>
+            <td class="label label-success" th:text="${job.coreCompetency}"></td>
         </tr>
         </thead>
     </table>

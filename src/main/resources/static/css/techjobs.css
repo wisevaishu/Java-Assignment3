@@ -31,14 +31,23 @@ table.job-listing {
 
 table.job-listing td:first-child {
     font-weight: bold;
+
 }
 
 table.job-listing td:last-child {
     width: 80%;
+
+}
+
+
+ table.job-listing td {
+
+    text-align: left;
 }
 
 label {
     margin-right: 15px;
+
 }
 
 .centered {
@@ -60,3 +69,5 @@ div.job-listing {
     width: 80%;
     background-color: #e4e4e4;
 }
+
+
