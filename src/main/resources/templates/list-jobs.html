@@ -8,12 +8,13 @@
 
 <div class="container body-content">
 
-  <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+<!--  <h1 th:text="${#strings.capitalizeWords(title)}"></h1>-->
+  <h1 th:text="${title}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
 
   <table class="job-listing" th:each="job : ${jobs}">
-    <thead>
+
     <tr>
       <th class="label label-primary">ID</th>
       <td class="label label-success" th:text="${job.id}"></td>
@@ -24,13 +25,15 @@
     </tr>
     <tr>
       <th class="label label-primary">Employer</th>
-<!--      <td class="label label-success" th:text="${job.employer}"></td>-->
-      <td><a th:href="@{'/list/jobs?column=employer&amp;value=' + ${job.employer}}"
-             th:text="${job.employer}" class="label label-success"></a></td>
+      <td class="label label-success" th:text="${job.employer}"></td>
+<!--      <td class="label label-success"><a th:href="@{'/list/jobs?column=employer&amp;value=' + ${job.employer}}"-->
+<!--             th:text="${job.employer}" ></a></td>-->
     </tr>
     <tr>
       <th class="label label-primary">Location</th>
       <td class="label label-success" th:text="${job.location}"></td>
+<!--      <td class="label label-success"><a th:href="@{'/list/jobs?column=location&amp;value=' + ${job.location}}"-->
+<!--             th:text="${job.location}" ></a></td>-->
     </tr>
     <tr>
       <th class="label label-primary">Position Type</th>
@@ -40,7 +43,7 @@
       <th class="label label-primary">Skill</th>
       <td class="label label-success" th:text="${job.coreCompetency}"></td>
     </tr>
-    </thead>
+
   </table>
 </div>
 </body>
